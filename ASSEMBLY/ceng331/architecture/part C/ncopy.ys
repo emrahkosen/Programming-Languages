@@ -1,0 +1,57 @@
+#/* $begin ncopy-ys */
+##################################################################
+# ncopy.ys - Copy a src block of len words to dst.
+# Return the number of positive words (>0) contained in src.
+#
+# Include your name and ID here.
+#Emrah KOSEN
+#1942317
+# Describe how and why you modified the baseline code.
+#I used a register which is %r10 which take the src's values consecutively.
+#I check if len is greater than equal to 1 if so it goes loop and the register take values
+#from src consecutively than dest take these values and check if this value is less than zero
+#if so rax is not increase else it increase by 1. At the end of 1 placement, %rdi and %rsi
+#registers are increased by (8*1) than it goes loop. The process repeat.
+# If check len and it is less than 1, goto Done.
+##################################################################
+# Do not modify this portion
+# Function prologue.
+# %rdi = src, %rsi = dst, %rdx = len
+ncopy:
+
+##################################################################
+# You can modify this portion
+	# Loop header
+	xorq %rax,%rax		# count = 0;
+
+Loop:
+	iaddq $-1,%rdx  # if len < 1
+	jl Done		# if len < 0, goto Addfour:
+	mrmovq (%rdi), %r10	# r10 = *src
+
+	rmmovq %r10, (%rsi)  # *dest = r10
+	andq %r10, %r10		# r10 <= 0?
+	jle Npos		# if so, goto Npos2:
+	iaddq $1, %rax		# count++
+
+
+
+
+Npos:
+	iaddq $8, %rdi         #src = src+4
+	iaddq $8, %rsi         #dest = dest+4
+	jmp Loop			# goto Loop:
+
+
+
+
+
+##################################################################
+# Do not modify the following section of code
+# Function epilogue.
+Done:
+	ret
+##################################################################
+# Keep the following label at the end of your function
+End:
+#/* $end ncopy-ys */
