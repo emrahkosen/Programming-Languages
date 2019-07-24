@@ -1,0 +1,22 @@
+{
+  "name": "rest-api-test",
+  "version": "1.0.0",
+  "description": "to test all url's which have get method",
+  "main": "index.js",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "jasmine": "^3.4.0",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node index.js",
+    "test": "./node_modules/jasmine/bin/jasmine.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.matriksdata.com/analist.stajyer/rest-api-test.git"
+  },
+  "author": "emrah kosen",
+  "license": "ISC"
+}
