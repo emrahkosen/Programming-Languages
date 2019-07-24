@@ -1,0 +1,31 @@
+
+{
+	     "insertRule": {
+        	"url" : "https://apidev.matriksdata.com:30443/dumrul/v1/arf/rule",
+	        "method": "post",
+        	"parameters": [],
+        	"gzAvailable" : false
+    	     },
+             "updateRule":{
+		   "url" : "https://apidev.matriksdata.com:30443/dumrul/v1/arf/rule",
+                "method": "put",
+                "parameters": ["active", "id"],
+                "gzAvailable": false
+	           },
+        "getAllRules": {
+                "url" : "https://apidev.matriksdata.com:30443/dumrul/v1/arf/rules",
+                "parameters": [],
+                "gzAvailable" : false
+             },
+        "getRule": {
+                "url" : "https://apidev.matriksdata.com:30443/dumrul/v1/arf/rule",
+                "parameters": ["id"],
+                "gzAvailable" : false
+             },
+        "deleteRule": {
+                "url" : "https://apidev.matriksdata.com:30443/dumrul/v1/arf/rule",
+                "method": "delete",
+                "parameters": ["id"],
+                "gzAvailable" : false
+            }
+}
