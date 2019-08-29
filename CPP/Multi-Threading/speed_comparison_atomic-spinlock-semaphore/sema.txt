@@ -1,0 +1,10 @@
+milliseconds since start: 16013 --> nonatomic == 60000000
+milliseconds since start: 14838 --> nonatomic == 60000000
+milliseconds since start: 19073 --> nonatomic == 60000000
+milliseconds since start: 18652 --> nonatomic == 60000000
+milliseconds since start: 15106 --> nonatomic == 60000000
+milliseconds since start: 15308 --> nonatomic == 60000000
+milliseconds since start: 14606 --> nonatomic == 60000000
+milliseconds since start: 15378 --> nonatomic == 60000000
+milliseconds since start: 14659 --> nonatomic == 60000000
+milliseconds since start: 14707 --> nonatomic == 60000000
