@@ -1,0 +1,11 @@
+milliseconds since start: 1910 --> atomic == 60000000
+milliseconds since start: 1987 --> atomic == 60000000
+milliseconds since start: 2028 --> atomic == 60000000
+milliseconds since start: 2065 --> atomic == 60000000
+milliseconds since start: 2043 --> atomic == 60000000
+milliseconds since start: 2070 --> atomic == 60000000
+milliseconds since start: 2026 --> atomic == 60000000
+milliseconds since start: 2046 --> atomic == 60000000
+milliseconds since start: 2059 --> atomic == 60000000
+milliseconds since start: 2022 --> atomic == 60000000
+milliseconds since start: 2057 --> atomic == 60000000
