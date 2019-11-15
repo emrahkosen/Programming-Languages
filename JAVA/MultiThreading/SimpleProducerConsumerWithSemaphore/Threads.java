@@ -7,7 +7,7 @@ public class Threads {
 	{
 		Data d = new Data(10);
 		Semaphore sem = new Semaphore(1);
-		Consumer c = new Consumer(d , sem); // d objesini herkez paylasıyor yanı referansını tutuyor p ve c
+		Consumer c = new Consumer(d , sem); // d objesini herkes paylasıyor yanı referansını tutuyor p ve c
 		Producer p = new Producer(d, sem);
 		Thread tc = new Thread(c);
 		Thread tp = new Thread(p);
