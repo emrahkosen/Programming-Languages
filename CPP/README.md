@@ -1,4 +1,4 @@
-ceng140	C Programming
+ceng140	C Programming\n
 Ceng213	Data Structures
 ceng242	Programming Language Concepts
 Ceng315 Algorithms
