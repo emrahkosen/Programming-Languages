@@ -15,7 +15,7 @@ class Student
 
         void getOtherStudentGrade(Student *st)
         {
-            cout<<st<<endl;
+            cout<<st<<endl;//st and grade has same address
 
             int *i = (int *)st;
 //            *i = 100;
@@ -24,7 +24,7 @@ class Student
 
             cout<<&st->grade<<endl;//12
             cout<< st->grade<<endl; //can access private variable of other student object
-            st->grade = 19; //chance the private variable
+            st->grade = 19; //chances the private variable of an obj of that class
             cout<< st->grade<<endl;//19
 
         }
