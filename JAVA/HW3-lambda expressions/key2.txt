@@ -1,0 +1,1 @@
+CPU,AMD,Threadripper 2990WX,32,3.00GHz,1699.99 USD
