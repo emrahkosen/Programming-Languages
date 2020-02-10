@@ -1,0 +1,44 @@
+Results are in seconds.
+
+5000000bytes file experiment 1 with %5 loss=250
+
+
+File with 25564 bytes
+%5 loss 3ms delay:
+Exp1:1.125,1.348,1.446,1.775,1.019
+Exp2:1.275,1.03,1.012,1.181,0.815
+%15 loss 3ms delay:
+Exp1:4.613,3.24,3.337,3.112,3.461
+Exp2:2.042,1.636,2.76,2.17,2.337
+%38 loss 3ms delay:
+Exp1:21.784,15.537,22.453,18.64,21.91
+Exp2:7.524,9.49,11.075,9.131,7.96
+
+
+
+
+interfaces that loss apllied
+r1=eth1,eth2 r2=eth2,eth4 r3=eth1,eth2 d=eth1,eth2,eth3 s=eth1,eth2,eth3
+
+
+##
+##
+##
+copy paste usages
+sudo tc qdisc add dev eth1 root netem loss 5% delay 3ms 
+sudo tc qdisc change dev eth1 root netem loss 15% delay 3ms 
+
+
+
+sudo tc qdisc delete dev eth1 root netem loss 38% delay 3ms
+sudo tc qdisc delete dev eth2 root netem loss 38% delay 3ms
+sudo tc qdisc delete dev eth3 root netem loss 38% delay 3ms
+
+sudo tc qdisc change dev eth4 root netem loss 38% delay 3ms 
+sudo tc qdisc change dev eth2 root netem loss 38% delay 3ms
+sudo tc qdisc change dev eth3 root netem loss 38% delay 3ms
+
+
+sudo tc qdisc add dev eth2 root netem loss 5% delay 3ms
+sudo tc qdisc add dev eth4 root netem loss 5% delay 3ms
+sudo tc qdisc add dev eth3 root netem loss 5% delay 3ms

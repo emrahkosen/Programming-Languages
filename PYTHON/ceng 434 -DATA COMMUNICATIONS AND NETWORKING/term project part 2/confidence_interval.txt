@@ -1,0 +1,22 @@
+x = [5,15,38]
+y = [1.34,3.55,20.1]
+err = [0.259,0.531,2.58]
+figure
+errorbar(x,y,err)
+grid on
+xlabel('Packet loss percentage (%)')
+ylabel('File transfer time (second)')
+legend('Time')
+
+
+
+
+x = [5,15,38]
+y = [1.06,2.19,9.04]
+err = [0.154,0.36,1.23]
+figure
+errorbar(x,y,err)
+grid on
+xlabel('Packet loss percentage (%)')
+ylabel('File transfer time (second)')
+legend('Time')

@@ -1,0 +1,6 @@
+ssh -i ~/.ssh/id_geni_ssh_rsa e2036200@pc2.instageni.nps.edu -p 25012
+10-d
+11-r1
+12-r2
+13-r3
+14-s
