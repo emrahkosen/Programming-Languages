@@ -1,5 +1,3 @@
-
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -31,8 +29,8 @@ int main()
     }
 
     else {
-        close(p1[1]);//close read of p1
-				close(p2[0]);// close write of p2
+        close(p1[1]);//close write of p1
+				close(p2[0]);// close read of p2
 				 write(p2[1], msg2, sizeof(msg2));
 				 read(p1[0],inbuf_pr,1000);
 				close(p2[1]);
