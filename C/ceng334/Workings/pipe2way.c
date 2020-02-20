@@ -29,13 +29,13 @@ int main()
     }
 
     else {
-        close(p1[1]);//close write of p1
+        			close(p1[1]);//close write of p1
 				close(p2[0]);// close read of p2
 				 write(p2[1], msg2, sizeof(msg2));
 				 read(p1[0],inbuf_pr,1000);
+	    			 fflush(stdout);
 				close(p2[1]);
 				close(p1[0]);
-				fflush(stdout);
 				printf("I am parent and child send me a message like '%s'\n",inbuf_pr );
         printf("Parent is waiting for child to exit \n");
 				wait(NULL);
