@@ -1,0 +1,137 @@
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+  height:   <%- heights%>; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+
+<div>
+
+
+
+  <form class="column" style="background-color:#afa;" action="/ilceler" method="post">
+
+      <div style = "margin-botton: 25px">
+
+        <button >Districts</button>
+
+      </div>
+
+      <div>
+
+        <body>
+          <%- ilce%>
+        </body>
+      </div>
+
+
+    </form>
+
+
+
+
+
+    <form class="column" style="background-color:#bbb;" action="/ilce" method="post">
+
+      <div style = "margin-botton: 25px">
+
+        <input type="text" id = "inp" name = "inp"> </input>
+        <button >Car Parks</button>
+
+      </div>
+
+
+      <div>
+        <body>
+         <p style="font-size:15px;">
+          <%- parklar%>
+         </p>
+        </body>
+      </div>
+
+
+    </form>
+
+
+
+
+
+    <form class="column" style="background-color:#cac;" action="/park" method="post">
+
+      <div style = "margin-botton: 25px">
+
+        <input type="text" id = "park" name = "park"> </input>
+        <button >Park Info</button>
+
+      </div>
+
+      <div>
+        <body>
+          <%- park%>
+        </body>
+      </div>
+
+
+    </form>
+
+
+
+
+
+
+    <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.2.1/css/ol.css" type="text/css">
+    <style>
+      .map {
+        height: 600px;
+        width: 100%;
+      }
+    </style>
+
+      <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.2.1/build/ol.js"></script>
+      <title>OpenLayers example</title>
+    </head>
+    <body>
+      <h2>IBB ispark</h2>
+      <div id="map" class="map"></div>
+
+      <script type="text/javascript">
+
+        var map = new ol.Map(
+        {
+          target: 'map',
+          layers:
+          [
+            new ol.layer.Tile({source: new ol.source.OSM()})
+          ],
+
+          view: new ol.View(
+            {
+              center: ol.proj.fromLonLat([<%- long%>, <%- lat%>]),
+              zoom: <%- zooming%>
+            })
+        });
+
+
+    </script>
+  </body>
+
+
+
+
+
+</div>
