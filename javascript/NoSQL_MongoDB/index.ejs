@@ -1,0 +1,258 @@
+<style>
+    html, body {
+        height: 100%;
+        margin: 0;
+        align : center;
+    }
+    .container {
+      height: 2000px;
+      position: relative;
+      background-color: rgb(202, 197, 241);
+      border: 3px solid green;
+    }
+    .center {
+        margin: 0;
+        position: absolute;
+        top: 10%;
+        left: 55%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+      }
+      .center2 {
+          margin: 0;
+          position: absolute;
+          top: 15%;
+          left: 55%;
+          -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+        }
+
+
+    #form {
+        margin: 5;
+        width: 30%;
+    }
+    .input {
+        width: 75%;
+        background-color: rgb(223, 233, 206);
+        font-size: 18;
+    }
+
+    p {
+        font-size: 18;
+        font-weight: bold;
+    }
+</style>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
+
+<html>
+    <head>
+        <title>mongoDB Atlas</title>
+    </head>
+    <body>
+
+
+        <div class="container">
+
+
+            <form id="form" action="/method" method="post">
+              <select class = "input" name = "input">
+                      <option value= "no" selected disabled hidden>Choose Option</option>
+                      <option  value="add_usr"> Add User</option>
+                      <option  value="del_usr"> Delete User</option>
+                      <option  value="login"> ALogin as a User</option>
+              </select>
+              <input  type="submit" >
+            </form>
+
+
+
+
+            <%if (method== "add_usr") { %>
+
+
+
+
+                <form class ="center" action="/adduser" method="post">
+                  <h3>Add User</h3>
+                  usename: <input class = "input" type="text" id = "name" name = "name"> </input>
+                  <br>
+                  <button >add user</button>
+
+                </form>
+
+            <% } else if (method== "del_usr") { %>
+
+
+
+                <form class ="center" action="/deluser" method="post">
+                  <p>Delete User</p>
+                  <select class = "input" name = "name">
+                    <option value= "no" selected disabled hidden>Select User</option>
+                    <% for ( let i = 0; i < users.length; i++ ) { %>
+                      <option  value= <%- users[i].name%> > <%- users[i].name%> </option>
+                    <% } %>
+                  </select>
+                  <button  >Delete User</button>
+
+                </form>
+
+            <% } else if (method== "login") { %>
+
+
+
+                <form class ="center" action="/login" method="post">
+                  <p>Login as a User</p>
+                  <select class = "input" name = "name">
+                    <option value= "no" selected disabled hidden>Select User</option>
+                    <% for ( let i = 0; i < users.length; i++ ) { %>
+                      <option  value= <%- users[i].name%> > <%- users[i].name%> </option>
+                    <% } %>
+                  </select>
+                  <button  >login user</button>
+
+                </form>
+
+
+
+            <% } else if (method == "user") { %>
+
+
+
+
+
+                <form id="form" action="/user_method" method="post">
+                  <p> USER MODE </p>
+                  Username: <%- user.name %>
+                  <br>
+                  User Total Rating : <%- user.rating %>
+                  <br>
+                  User Avg Rating : <%- user.avg_rating %>
+                  <br>
+                  <br>
+                  <select class = "input" name = "method">
+                          <option value= "no" selected disabled hidden>Choose what you want</option>
+                          <option  value="exibit"> Exibit Invention</option>
+                          <option  value="drop"> Drop Invention</option>
+                          <option  value="rate"> Rate Inventions</option>
+                  </select>
+                  <input  type="submit">
+                </form>
+
+                <%if (usermethod== "exibit") { %>
+
+
+                  <form class ="center" action="/exibit" method="post">
+                    <p> Exibit Product </p>
+                    product name: <input type="text" id = "name" name = "product"> </input>
+                    <br>
+                    photo: <input type="text" id = "name" name = "photo"> </input>
+                    <br>
+                    cost: <input type="text" id = "name" name = "cost"> </input>
+                    <br>
+                    materials used: <input type="text" id = "name" name = "materials"> </input>
+                    <br>
+                    inventors name: <input type="text" id = "name" name = "inventors"> </input>
+                    <br>
+                    feature1 name: <input type="text" id = "name" name = "feature1name"> </input>
+                    feature1 feature: <input type="text" id = "name" name = "feature1"> </input>
+
+                    <br>
+                    feature2 name: <input type="text" id = "name" name = "feature2name"> </input>
+                    feature2 feature: <input type="text" id = "name" name = "feature2"> </input>
+
+                    <br>
+                    <button  >Exibit</button>
+
+                  </form>
+                <% } else if (usermethod == "drop") { %>
+
+
+
+                    <form class ="center" action="/drop" method="post">
+                      <p> Drop Product </p>
+                      <select class = "input" name = "product">
+                        <option value= "no" selected disabled hidden>Choose product</option>
+                        <% for ( let i = 0; i < user.gallery.length ; i++ ) { %>
+                          <%if ( user.gallery[i].active == 1 ) { %>
+                            <option  value= <%- user.gallery[i].product%>> <%- user.gallery[i].product%></option>
+                          <% } %>
+                        <% } %>
+
+                      </select>
+                      <input  type="submit">
+                    </form>
+
+                <% } else if (usermethod == "show") { %>
+
+                      <form class ="center2" action="/rate" method="post">
+
+
+
+                        <img src=<%- product.photo%> width="600" height="345">
+                        <br>
+                        <% for (let [key, value] of Object.entries(product)) { %>
+                          <%  if (key == 'active' || key == "rated_users" || key == "photo" ) { %>
+
+                            <% } else{ %>
+                              <%- key%>: <%- value%>
+                              <br>
+                            <% } %>
+                        <% }  %>
+
+                        <br>
+                        <label for="quantity">Quantity (between 1 and 5):</label>
+                        <input type="number" id="quantity" name="quantity" min="1" max="5">
+                        <button  >Rate Product</button>
+                      </form>
+
+
+
+                <% } else if (usermethod == "rate") { %>
+
+                    <form class ="center" action="/show" method="post">
+                      <p>Rate Inventions</p>
+                      <select class = "input" name = "product">
+                        <% for ( let i = 0; i < users.length; i++ ) { %>
+
+                          <% for ( let j = 0; j < users[i].gallery.length; j++ ) { %>
+
+                            <%if ( users[i].gallery[j].active == 1 ) { %>
+                                <option value= "no" selected disabled hidden>Choose product</option>
+                                <option  value= <%- users[i].gallery[j].product + "," +  users[i].name %>  >
+                                <%- users[i].gallery[j].product%> owned by <%- users[i].name%>  </option>
+                            <% } %>
+
+                          <% } %>
+                        <% } %>
+                      </select>
+                      <br>
+                      <button  >Show Product</button>
+
+
+                    </form>
+
+
+                <% } else{ %>
+                  <!-- do  nothing  -->
+                <% } %>
+
+
+
+            <% } else{ %>
+                <p>not choosen method</p>
+            <% } %>
+
+
+
+
+
+        </div>
+
+
+
+
+    </body>
+</html>
