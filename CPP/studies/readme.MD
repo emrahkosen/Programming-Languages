@@ -1,1 +1,1 @@
-This folder includes some studies of me which are interesting.
+This folder includes some studies from me which are interesting.
