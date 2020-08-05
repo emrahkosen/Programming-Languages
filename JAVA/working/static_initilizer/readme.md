@@ -1,0 +1,2 @@
+Java Static Initializer Block
+
