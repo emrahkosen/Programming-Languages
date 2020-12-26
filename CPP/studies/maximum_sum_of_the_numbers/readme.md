@@ -22,14 +22,14 @@ As you can see this has several paths that fits the rule of NOT PRIME NUMBERS; 1
 
 
 
-How to work:
-Compile the core and run it.
-the first input that you write # of line that you give. 
-the i'th line take i element of integer.
-After giving inputs, max vlue is calculaten and printed.
-g++ -o fun fun.cpp
-4
-1
-8 4
-2 6 9
-8 5 9 3
+How to work: <br />
+Compile the core and run it. <br />
+the first input that you write # of line that you give. <br /> 
+the i'th line take i element of integer. <br />
+After giving inputs, max vlue is calculaten and printed. <br />
+g++ -o fun fun.cpp <br />
+4 <br />
+1 <br />
+8 4 <br />
+2 6 9 <br />
+8 5 9 3 <br />
