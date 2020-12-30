@@ -28,6 +28,7 @@ the first input that you write # of line that you give. <br />
 the i'th line take i element of integer. <br />
 After giving inputs, max vlue is calculaten and printed. <br />
 g++ -o fun fun.cpp <br />
+./fun <br />
 4 <br />
 1 <br />
 8 4 <br />
