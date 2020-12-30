@@ -34,3 +34,9 @@ g++ -o fun fun.cpp <br />
 8 4 <br />
 2 6 9 <br />
 8 5 9 3 <br />
+
+
+
+or  <br />
+
+./fun < inp.txt > out.txt <br />
