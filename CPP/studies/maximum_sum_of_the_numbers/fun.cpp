@@ -2,7 +2,6 @@
 #include <string>
 #include <vector>
 #include<algorithm>
-#include <cstdio>
 using namespace std;
 
 
@@ -150,6 +149,6 @@ int main()
    getTriangle();
    maxSumBelowAdjacent(0,0);
    printTriangle();
-   cout<<"maximim value is " << triangle[0][0].maxVal << endl;
+   cout<<"Maximum value is " << triangle[0][0].maxVal << endl;
    cout<<"Depth is " << triangle[0][0].depth << endl;
 }
